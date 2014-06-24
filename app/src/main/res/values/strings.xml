@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BlueTweety</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_photos">Flickr Photos</string>
+    <string name="login_label">Connect to Twitter</string>
+    <string name="title_activity_timeline">BlueTweety</string>
+    <string name="username_placeholder">\@bluetweety</string>
+    <string name="tweetbody_placeholder">This is a sample tweet</string>
+    <string name="timestamp_placeholder">11h</string>
+    <string name="user_placeholder">Blue Tweety</string>
+    <string name="title_activity_compose">Compose</string>
+    <string name="button_tweet">TWEET</string>
+
+</resources>
