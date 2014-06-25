@@ -64,6 +64,7 @@ public class TimelineActivity extends Activity {
             @Override
             public void onSuccess(JSONArray json) {
                 ArrayList<Tweet> newTweets = Tweet.fromJSONArray(json);
+                aTweets.clear();
                 aTweets.addAll(newTweets);
                 maxId = newTweets.get(newTweets.size() - 1).getUid();
             }
@@ -86,6 +87,10 @@ public class TimelineActivity extends Activity {
     public void onComposeClick(MenuItem mi) {
         Intent i = new Intent(this, ComposeActivity.class);
         startActivity(i);
+    }
+
+    public void onRefreshClick(MenuItem mi) {
+        populateTimeline();
     }
 
 }

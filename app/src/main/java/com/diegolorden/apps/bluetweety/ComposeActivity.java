@@ -49,7 +49,8 @@ public class ComposeActivity extends Activity {
         etCompose.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (keyEvent.getAction() == KeyEvent.ACTION_UP) {
+                int action = keyEvent.getAction();
+                if (action == KeyEvent.ACTION_UP || action == KeyEvent.ACTION_DOWN) {
                     int charsLeft = 140 - etCompose.length();
                     miRemainingChars.setTitle(Integer.toString(charsLeft));
                 }
