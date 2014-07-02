@@ -8,22 +8,23 @@
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/ivProfileImage"
+        android:id="@+id/ivTweetProfileImage"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/ic_launcher"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:onClick="showProfile" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/username_placeholder"
-        android:id="@+id/tvUserName"
+        android:id="@+id/tvTweetUserName"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/ivProfileImage"
+        android:layout_toRightOf="@+id/ivTweetProfileImage"
         android:layout_marginTop="5dp"
         android:fontFamily="sans-serif"
         android:textStyle="bold" />
@@ -32,18 +33,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tweetbody_placeholder"
-        android:id="@+id/tvBody"
+        android:id="@+id/tvTweetBody"
         android:autoLink="all"
         android:linksClickable="true"
-        android:layout_below="@+id/tvUserName"
-        android:layout_toRightOf="@+id/ivProfileImage"
-        android:fontFamily="sans-serif-light" />
+        android:fontFamily="sans-serif-light"
+        android:layout_below="@+id/tvTweetUserName"
+        android:layout_toRightOf="@+id/ivTweetProfileImage" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/timestamp_placeholder"
-        android:id="@+id/tvTimestamp"
+        android:id="@+id/tvTweetTimestamp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -56,10 +57,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/tvUserHandle"
-        android:layout_above="@+id/tvBody"
-        android:layout_toRightOf="@+id/tvUserName"
+        android:id="@+id/tvTweetUserHandle"
         android:fontFamily="sans-serif-light"
         android:paddingLeft="5dp"
-        android:textColor="#8899a6" />
+        android:textColor="#8899a6"
+        android:layout_above="@+id/tvTweetBody"
+        android:layout_toRightOf="@+id/tvTweetUserName" />
 </RelativeLayout>

@@ -11,26 +11,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etCompose"
-        android:layout_below="@+id/tvUserHandle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:maxLength="@integer/max_tweet_chars"
-        android:paddingTop="20dp"
+        android:paddingTop="40dp"
         android:paddingBottom="10dp"
         android:focusable="true"
         android:background="@null"
         android:typeface="serif"
         android:fontFamily="sans-serif-light"
-        android:hint="What's happening?" />
+        android:hint="What's happening?"
+        android:layout_below="@+id/tvComposeUserName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/ivUserPicture"
+        android:id="@+id/ivComposeUserPicture"
         android:src="#00ffffff"
-        android:layout_alignTop="@+id/btnTweet"
+        android:layout_alignTop="@+id/tvComposeUserName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginRight="5dp" />
@@ -38,9 +36,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvUserName"
+        android:id="@+id/tvComposeUserName"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/ivUserPicture"
+        android:layout_toRightOf="@+id/ivComposeUserPicture"
         android:textStyle="bold"
         android:textSize="20dp"
         android:fontFamily="sans-serif-light" />
@@ -48,16 +46,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvUserHandle"
-        android:layout_below="@+id/tvUserName"
-        android:layout_toRightOf="@+id/ivUserPicture"
-        android:fontFamily="sans-serif-light" />
+        android:id="@+id/tvComposeUserHandle"
+        android:layout_below="@+id/tvComposeUserName"
+        android:layout_toRightOf="@+id/ivComposeUserPicture"
+        android:fontFamily="sans-serif-light"
+        android:text="handle" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:text="@string/button_tweet"
-        android:id="@+id/btnTweet"
+        android:id="@+id/btnComposeTweet"
         android:layout_alignParentTop="true"
         style="@style/SolidButton"
         android:layout_alignParentRight="true"

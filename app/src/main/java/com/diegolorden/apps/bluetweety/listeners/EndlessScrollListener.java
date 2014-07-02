@@ -1,4 +1,4 @@
-package com.diegolorden.apps.bluetweety;
+package com.diegolorden.apps.bluetweety.listeners;
 
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;

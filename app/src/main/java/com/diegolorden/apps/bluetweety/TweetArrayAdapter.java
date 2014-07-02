@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.activeandroid.util.Log;
 import com.diegolorden.apps.bluetweety.models.Tweet;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -35,21 +34,21 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet>{
             v = convertView;
         }
 
-        ImageView ivProfileImage = (ImageView) v.findViewById(R.id.ivProfileImage);
+        ImageView ivProfileImage = (ImageView) v.findViewById(R.id.ivTweetProfileImage);
         ivProfileImage.setImageResource(android.R.color.transparent);
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), ivProfileImage);
 
-        TextView tvUserName = (TextView) v.findViewById(R.id.tvUserName);
+        TextView tvUserName = (TextView) v.findViewById(R.id.tvTweetUserName);
         tvUserName.setText(tweet.getUser().getName());
 
-        TextView tvUserHandle = (TextView) v.findViewById(R.id.tvUserHandle);
+        TextView tvUserHandle = (TextView) v.findViewById(R.id.tvTweetUserHandle);
         tvUserHandle.setText("@" + tweet.getUser().getScreenName());
 
-        TextView tvBody = (TextView) v.findViewById(R.id.tvBody);
+        TextView tvBody = (TextView) v.findViewById(R.id.tvTweetBody);
         tvBody.setText(tweet.getBody());
 
-        TextView tvTimestamp = (TextView) v.findViewById(R.id.tvTimestamp);
+        TextView tvTimestamp = (TextView) v.findViewById(R.id.tvTweetTimestamp);
         tvTimestamp.setText(getRelativeTimeAgo(tweet.getCreatedAt()));
 
         return v;

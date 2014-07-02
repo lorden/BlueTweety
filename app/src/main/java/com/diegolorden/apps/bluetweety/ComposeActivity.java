@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.util.Log;
 
 import com.diegolorden.apps.bluetweety.models.User;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -38,10 +37,10 @@ public class ComposeActivity extends Activity {
         setContentView(R.layout.activity_compose);
         client = TwitterApp.getRestClient();
         etCompose = (EditText) findViewById(R.id.etCompose);
-        ivUserPicture = (ImageView) findViewById(R.id.ivUserPicture);
-        tvUserName = (TextView) findViewById(R.id.tvUserName);
-        tvUserHandle = (TextView) findViewById(R.id.tvUserHandle);
-        btnTweet = (Button) findViewById(R.id.btnTweet);
+        ivUserPicture = (ImageView) findViewById(R.id.ivComposeUserPicture);
+        tvUserName = (TextView) findViewById(R.id.tvComposeUserName);
+        tvUserHandle = (TextView) findViewById(R.id.tvComposeUserHandle);
+        btnTweet = (Button) findViewById(R.id.btnComposeTweet);
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(etCompose, InputMethodManager.SHOW_IMPLICIT);
@@ -78,11 +77,10 @@ public class ComposeActivity extends Activity {
             }
         });
 
-        client.getUserInfo(new JsonHttpResponseHandler() {
+        client.getUserInfo("", new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(JSONObject json) {
-                Log.d("RESPONSE", json.toString());
                 User currentUser = User.fromJSON(json);
                 tvUserHandle.setText("@" + currentUser.getScreenName());
                 tvUserName.setText(currentUser.getName());
